@@ -3,6 +3,7 @@
         <div class="col-lg-10">
 
             <div class="card" style="width:500px;margin-top: 10%;">
+
                 <div class="card-body">
                     <div style="display: flex;">
                         <img class="card-img-top" src="assets/images/user_img.jpg"
@@ -34,36 +35,76 @@
 
                     </div>
                 </div>
-                <hr>
-                <div class="card-body" style="margin-left: 50px;">
-                    <div style="display: flex;">
-                    <img class="card-img-top" src="assets/images/user_img2.jpg"
-                        style="width: 50px;height: 50px;border-radius: 25px;" alt="Card image cap">
-        
-                        <h5>{{this.api.apiData.replies[0].displayname}}</h5>
-                        <h6 style="position: absolute;left: 120px;top: 240px;">{{this.api.apiData.replies[0].username}}</h6>
-                        <label
-                            style="position: absolute;left: 400px;">{{this.api.apiData.replies[0].postedAt}}</label>
+                <ng-container *ngFor="let cardItem1 of this.api.apiData.replies">
+                    <hr>
+
+                    <div class="card-body" style="margin-left: 50px;">
+                        <div style="display: flex;">
+                            <img class="card-img-top" src="assets/images/user_img2.jpg"
+                                style="width: 50px;height: 50px;border-radius: 25px;" alt="Card image cap">
+
+                            <h5>{{cardItem1.displayname}}</h5>
+                            <h6 style="position: absolute;left: 120px;top: 240px;">{{cardItem1.username}}</h6>
+                            <label style="position: absolute;left: 400px;">{{cardItem1.postedAt}}</label>
+                        </div>
+                        <p class="card-text mt-2 mb-2">{{cardItem1.text}}</p>
+
+                        <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                            <span style="display: flex;">
+                                <img src="assets/images/share_icon.svg" style="width: 20px;height: 20px;"
+                                    alt="share icon">
+                                <label class="ml-2">{{cardItem1.shares}}</label>
+                            </span>
+                            <span style="display: flex;">
+                                <img src="assets/images/like_icon.png" style="width: 20px;height: 20px;"
+                                    alt="share icon">
+                                <label class="ml-2">{{cardItem1.likes}}</label>
+                            </span>
+
+                            <span style="display: flex;">
+                                <img src="assets/images/comment_icon.png" style="width: 20px;height: 20px;"
+                                    alt="share icon">
+                                <label class="ml-2">{{cardItem1.postLevel}}</label>
+                            </span>
+
+                        </div>
                     </div>
-                    <p class="card-text mt-2 mb-2">{{this.api.apiData.replies[0].text}}</p>
 
-                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
-                        <span style="display: flex;">
-                            <img src="assets/images/share_icon.svg" style="width: 20px;height: 20px;" alt="share icon">
-                            <label class="ml-2">{{this.api.apiData.replies[0].shares}}</label>
-                        </span>
-                        <span style="display: flex;">
-                            <img src="assets/images/like_icon.png" style="width: 20px;height: 20px;" alt="share icon">
-                            <label class="ml-2">{{this.api.apiData.replies[0].likes}}</label>
-                        </span>
+                    <ng-container *ngFor="let innerCard of cardItem1.replies">
+                        <div class="card-body" style="margin-left: 50px;">
+                            <div style="display: flex;">
+                                <img class="card-img-top" src="assets/images/user_img2.jpg"
+                                    style="width: 50px;height: 50px;border-radius: 25px;" alt="Card image cap">
 
-                        <span style="display: flex;">
-                            <img src="assets/images/comment_icon.png" style="width: 20px;height: 20px;"
-                                alt="share icon">
-                            <label class="ml-2">{{this.api.apiData.replies[0].postLevel}}</label>
-                        </span>
+                                <h5>{{innerCard.displayname}}</h5>
+                                <h6 style="position: absolute;left: 120px;top: 240px;">{{innerCard.username}}</h6>
+                                <label style="position: absolute;left: 400px;">{{innerCard.postedAt}}</label>
+                            </div>
+                            <p class="card-text mt-2 mb-2">{{innerCard.text}}</p>
 
-                </div>
+                            <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                                <span style="display: flex;">
+                                    <img src="assets/images/share_icon.svg" style="width: 20px;height: 20px;"
+                                        alt="share icon">
+                                    <label class="ml-2">{{innerCard.shares}}</label>
+                                </span>
+                                <span style="display: flex;">
+                                    <img src="assets/images/like_icon.png" style="width: 20px;height: 20px;"
+                                        alt="share icon">
+                                    <label class="ml-2">{{innerCard.likes}}</label>
+                                </span>
+
+                                <span style="display: flex;">
+                                    <img src="assets/images/comment_icon.png" style="width: 20px;height: 20px;"
+                                        alt="share icon">
+                                    <label class="ml-2">{{innerCard.postLevel}}</label>
+                                </span>
+
+                            </div>
+                        </div>
+
+                    </ng-container>
+                </ng-container>
             </div>
             <!-- <div class="card">
         {{this.api.apiData.username}}
