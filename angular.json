@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "simple-feed-app"
+    }
+  },
+  "defaultProject": "simple-feed-app",
+  "cli": {
+    "analytics": "1bff1cd3-8cd2-4313-992b-078db5b120a5"
+  }
 }

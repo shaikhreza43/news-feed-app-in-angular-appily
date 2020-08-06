@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10">
+
+            <div class="card" style="width:500px;margin-top: 10%;">
+                <div class="card-body">
+                    <div style="display: flex;">
+                        <img class="card-img-top" src="assets/images/user_img.jpg"
+                            style="width: 50px;height: 50px;border-radius: 25px;" alt="Card image cap">
+
+                        <h5>{{this.api.apiData.displayname}}</h5>
+                        <h6 style="position: absolute;left: 66px;top: 50px;">{{this.api.apiData.username}}</h6>
+                        <label style="position: absolute;left: 400px;">{{this.api.apiData.postedAt}}</label>
+                    </div>
+
+                    <p class="card-text mt-2 mb-2">{{this.api.apiData.text}}</p>
+
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                        <span style="display: flex;">
+                            <img src="assets/images/share_icon.svg" style="width: 20px;height: 20px;" alt="share icon">
+                            <label class="ml-2">{{this.api.apiData.shares}}</label>
+                        </span>
+                        <span style="display: flex;">
+                            <img src="assets/images/like_icon.png" style="width: 20px;height: 20px;" alt="share icon">
+                            <label class="ml-2">{{this.api.apiData.likes}}</label>
+                        </span>
+
+                        <span style="display: flex;">
+                            <img src="assets/images/comment_icon.png" style="width: 20px;height: 20px;"
+                                alt="share icon">
+                            <label class="ml-2">{{this.api.apiData.postLevel}}</label>
+                        </span>
+
+
+                    </div>
+                </div>
+                <hr>
+                <div class="card-body" style="margin-left: 50px;">
+                    <div style="display: flex;">
+                    <img class="card-img-top" src="assets/images/user_img2.jpg"
+                        style="width: 50px;height: 50px;border-radius: 25px;" alt="Card image cap">
+        
+                        <h5>{{this.api.apiData.replies[0].displayname}}</h5>
+                        <h6 style="position: absolute;left: 120px;top: 240px;">{{this.api.apiData.replies[0].username}}</h6>
+                        <label
+                            style="position: absolute;left: 400px;">{{this.api.apiData.replies[0].postedAt}}</label>
+                    </div>
+                    <p class="card-text mt-2 mb-2">{{this.api.apiData.replies[0].text}}</p>
+
+                    <div style="display: flex;flex-direction: row;justify-content: space-between;">
+                        <span style="display: flex;">
+                            <img src="assets/images/share_icon.svg" style="width: 20px;height: 20px;" alt="share icon">
+                            <label class="ml-2">{{this.api.apiData.replies[0].shares}}</label>
+                        </span>
+                        <span style="display: flex;">
+                            <img src="assets/images/like_icon.png" style="width: 20px;height: 20px;" alt="share icon">
+                            <label class="ml-2">{{this.api.apiData.replies[0].likes}}</label>
+                        </span>
+
+                        <span style="display: flex;">
+                            <img src="assets/images/comment_icon.png" style="width: 20px;height: 20px;"
+                                alt="share icon">
+                            <label class="ml-2">{{this.api.apiData.replies[0].postLevel}}</label>
+                        </span>
+
+                </div>
+            </div>
+            <!-- <div class="card">
+        {{this.api.apiData.username}}
+    </div> -->
+        </div>
+    </div>
+</div>
